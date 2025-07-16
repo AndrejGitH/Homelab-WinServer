@@ -1,0 +1,7 @@
+## Lab Architecture Overview
+
+| **Server Name**   | **Primary Role**        | **Domain Member** | **Key Features**                                         |
+|-------------------|------------------------|:-----------------:|----------------------------------------------------------|
+| **WinServerDC**   | Domain Controller      |        ✅         | Active Directory, DNS, DHCP, Group Policy                |
+| **WinServerUI**   | File & Infra Server    |        ✅         | File Shares (S: drive), Monitoring, Backup Target        |
+| **Sales-Smith**   | Workstation (User PC)  |        ✅         | GPO enforcement, Proxy client, Realistic usage simulation|
