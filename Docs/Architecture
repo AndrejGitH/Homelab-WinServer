@@ -1,7 +1,8 @@
-## Lab Architecture Overview
+Domain Network:
+├── WinServerDC (Domain Controller: AD, DNS, DHCP, GPO)
+│
+├── WinServerUI (File Server: SMB Shares, Monitoring Tools, Backup Target)
+│
+└── Sales-Smith (User Workstation: GPO Client, Proxy Client)
 
-| **Server Name**   | **Primary Role**        | **Domain Member** | **Key Features**                                         |
-|-------------------|------------------------|:-----------------:|----------------------------------------------------------|
-| **WinServerDC**   | Domain Controller      |        ✅         | Active Directory, DNS, DHCP, Group Policy                |
-| **WinServerUI**   | File & Infra Server    |        ✅         | File Shares (S: drive), Monitoring, Backup Target        |
-| **Sales-Smith**   | Workstation (User PC)  |        ✅         | GPO enforcement, Proxy client, Realistic usage simulation|
+
