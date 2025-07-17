@@ -1,8 +1,0 @@
-Domain Network:
-├── WinServerDC (Domain Controller: AD, DNS, DHCP, GPO)
-│
-├── WinServerUI (File Server: SMB Shares, Monitoring Tools, Backup Target)
-│
-└── Sales-Smith (User Workstation: GPO Client, Proxy Client)
-
-
