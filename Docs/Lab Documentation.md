@@ -1,72 +1,59 @@
-# Lab Documentation: Windows Server Homelab
+# Homelab Process Documentation – Windows Server Small Office Simulation
 
-## 1. Virtual Environment Deployment
+## 1. Environment Deployment
 
-- **Hypervisor:** Hyper-V  
-- **Deployed Virtual Machines:**
-    - **WinServerDC:** Windows Server 2022 – Domain Controller
-    - **WinServerUI:** Windows Server 2022 – File & Proxy Server
-    - **Sales-Smith:** Windows 10 – Simulated sales employee workstation
+- **Hypervisor:** Hyper-V
+- **Virtual Machines:**
+    - **WinServerDC:** Windows Server 2022 — Domain Controller
+    - **WinServerUI:** Windows Server 2022 — File & Proxy Server
+    - **Sales-Smith:** Windows 10 — Workstation (Sales role simulation)
 
-## 2. Domain Controller Configuration (WinServerDC)
+## 2. Domain Infrastructure Configuration
 
-- **Roles Installed:**
+- Installed the following roles on **WinServerDC**:
     - Active Directory Domain Services (AD DS)
     - Domain Name System (DNS)
     - Dynamic Host Configuration Protocol (DHCP)
-- **Promoted WinServerDC to a Domain Controller:**
-    - Created root forest/domain for centralized authentication and management.
+- Promoted WinServerDC to Domain Controller, establishing a new Active Directory forest and domain.
+- Joined both WinServerUI and Sales-Smith to the domain for centralized management.
 
-## 3. File Server & Shared Storage Setup (WinServerUI)
+## 3. Organizational Structure & Account Provisioning
 
-- **File Server Role:**  
-    - Installed on WinServerUI for secure, central storage.
-- **Shared Folder:**
-    - Created a dedicated folder (`Sales-Shared`) for departmental documents.
-    - Configured NTFS and share permissions to grant access only to “Sales Users.”
-- **Drive Mapping:**
-    - Mapped `Sales-Shared` as network drive S: for all Sales Users via Group Policy Preferences.
-    - Ensured all users see S: as a standard volume in File Explorer on logon.
+- Created the **“Zilina” Organizational Unit (OU)** to group related users and assets.
+- Established a **global security group, "Sales Users,"** within the Zilina OU.
+- Provisioned a user account (**John Smith**) and assigned membership in the Sales Users group.
 
-## 4. Proxy Server Deployment & Web Monitoring (WinServerUI)
+## 4. File Server and Secure Shared Storage (WinServerUI)
 
-- **CCProxy Installation:**  
-    - Installed CCProxy on WinServerUI as a web filter and monitoring solution.
-- **Configuration Steps:**
-    - Limited proxy access to the Sales-Smith workstation’s IP.
-    - Aligned HTTP proxy port (e.g., 808) in both CCProxy and client manual proxy settings.
-    - Added Windows Firewall inbound rule for port 808 (TCP).
-    - Verified all VM network connectivity.
-- **Monitoring:**  
-    - Utilized CCProxy’s Monitor tab to log and review web activity from the client PC.
+- Enabled the File Server role on WinServerUI.
+- Created the **Sales-Shared** folder for department file collaboration.
+- Configured both **NTFS and share-level permissions** to grant access solely to members of Sales Users.
+- Leveraged **Group Policy Preferences** to map the S: drive (`\\WinServerUI\Sales-Shared`) automatically for all Sales Users, delivering seamless access in File Explorer.
 
-## 5. Organizational Structure and User Provisioning
+## 5. Proxy Server Configuration & Monitoring (WinServerUI)
 
-- **Created Organizational Unit:**  
-    - “Zilina” for logical separation in Active Directory.
-- **Sales Users Group:**  
-    - Created global group "Sales Users" within Zilina OU.
-    - Added user `john smith` to the Sales Users group.
+- Installed and configured **CCProxy** on WinServerUI to filter web traffic and monitor user activity.
+- Limited proxy access to the **Sales-Smith workstation** by IP, ensuring only authorized devices use the proxy.
+- Standardized HTTP proxy port (e.g., 808) settings on both WinServerUI and Sales-Smith, aligning client and server configuration.
+- Created an inbound Windows Firewall rule on WinServerUI permitting TCP traffic on the proxy port.
+- Verified that all internet traffic from Sales-Smith was routed through the proxy, as intended.
+- **Used CCProxy’s monitoring/logging features** to capture and review Sales-Smith's web activity, supporting compliance and visibility.
 
-## 6. Group Policy Management
+## 6. Group Policy Implementation
 
-- **GPO Deployment:**
-    - Applied Group Policy Objects to restrict sales employees from changing desktop wallpapers and accessing Control Panel.
-    - Linked policies to Zilina OU for targeted management.
-- **Policy Enforcement:**  
-    - Executed domain-wide GPO update using PowerShell script (`gpupdate`) from WinServerDC.
+- Deployed targeted Group Policy Objects (GPOs) to the Zilina OU/Sales Users group:
+    - Prevented desktop wallpaper changes.
+    - Restricted access to the Control Panel.
+- Used a PowerShell script from WinServerDC to trigger a domain-wide GPO update, ensuring immediate application of policy changes.
 
 ## 7. Remote Desktop Administration
 
-- **Enabled Remote Desktop Services:**
-    - Configured Sales-Smith client PC for remote access.
-- **Testing:**  
-    - Connected remotely from WinServerDC to Sales-Smith, demonstrated file system operations (e.g., folder creation) as an admin.
+- Enabled Remote Desktop on the Sales-Smith workstation for support and management.
+- Connected from WinServerDC using RDP to demonstrate hands-on remote troubleshooting and administrative file management.
 
-## 8. Advanced Monitoring & Proactive Alerting
+## 8. Monitoring & Alerting
 
-- **Event Viewer:**  
-    - From WinServerDC, connected to Sales-Smith PC using Event Viewer to inspect system/application logs remotely.
-- **Performance Monitor Alert:**
-    - Configured Performance Monitor on Sales-Smith to trigger an alert when disk space drops below 10%.
-    - Verified remote logging and alerting functionality for proactive support.
+- Used Event Viewer on WinServerDC to remotely access and review system and application logs from Sales-Smith, supporting centralized incident monitoring.
+- Configured **Performance Monitor** on Sales-Smith to trigger an alert when disk space dropped below 10%, facilitating proactive issue detection.
+
+
