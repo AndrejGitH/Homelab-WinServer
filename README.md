@@ -21,7 +21,7 @@ _For detailed setup and process documentation, see the [Docs folder](https://git
 
 
 
-*Configured three virtual machines (WinServerDC, WinServerUI, Sales-Smith) on Hyper-V to simulate realistic business infrastructure.*\
+*Configured three virtual machines (WinServerDC, WinServerUI, Sales-Smith) on Hyper-V to simulate realistic business infrastructure.*
 
 <img width="476" height="118" alt="1-Hyper-V" src="https://github.com/user-attachments/assets/8c7bccf7-97c0-4aac-bd68-00ad1c00cf86" />
 
