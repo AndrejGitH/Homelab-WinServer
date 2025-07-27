@@ -1,4 +1,0 @@
-$computers = @("WinServerUi", "Sales-Smith") 
-foreach ($computer in $computers) {
-    Invoke-Command -ComputerName $computer -ScriptBlock { gpupdate /force }
-}
