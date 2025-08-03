@@ -63,7 +63,7 @@ _For detailed setup and process documentation, see the [Docs folder](https://git
 *I’ve practiced PowerShell scripting for common IT tasks like:*
 
 
-## PowerShell Scripting Practice
+### 7.  PowerShell Scripting Practice
 
 I’ve practiced PowerShell scripting for common IT tasks like:
 
