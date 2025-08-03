@@ -60,7 +60,10 @@ _For detailed setup and process documentation, see the [Docs folder](https://git
 
 ### 6. File Server – Mapped Drive
 
-*I’ve practiced PowerShell scripting for common IT tasks like:*
+
+*Mapped shared S: drive to all sales users via Group Policy for seamless file access.*
+![11-FileServer-DriveMaps](https://github.com/user-attachments/assets/31657c8f-19e0-46a0-8ade-8cd4e261b639)
+![12-SalesPC-SharedDrive](https://github.com/user-attachments/assets/5ccf882c-ed61-4167-b352-09baa5b358d1)
 
 
 ### 7.  PowerShell Scripting Practice
