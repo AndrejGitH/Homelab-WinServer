@@ -72,6 +72,7 @@ I’ve practiced PowerShell scripting for common IT tasks like:
 
 - Automating Group Policy updates across all domain computers  
 - Creating Active Directory users quickly and securely via scripts
+- Removing Active Directory users quickly and securely via scripts
 
 See:
 https://github.com/AndrejGitH/Homelab-WinServer/tree/master/Scripts
