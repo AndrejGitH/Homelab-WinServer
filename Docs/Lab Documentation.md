@@ -56,4 +56,30 @@
 - Used Event Viewer on WinServerDC to remotely access and review system and application logs from Sales-Smith, supporting centralized incident monitoring.
 - Configured **Performance Monitor** on Sales-Smith to trigger an alert when disk space dropped below 10%, facilitating proactive issue detection.
 
+## 9. Backup
+
+### 1) Veeam
+- **Purpose:** Back up the Domain Controller (DC) using Veeam Windows Computer backup job.
+- **Backup Name:** `Backup2025`
+- **Scope:** First-level backup selecting a few folders.
+- **Schedule:** Monthly
+- **Retention Policy:** 7 days
+
+### 2) Windows Backup
+- Installed **Windows Server Backup** feature.
+- Created a new volume for backups.
+- Scheduled backup for `C:\Sales-Data`.
+
+## 10. Scripts
+
+- Created scripts to automate:
+  - Creating users
+  - Removing users
+  - Automating policy management
+- See scripts folder for details.
+
+
+
+
+
 
