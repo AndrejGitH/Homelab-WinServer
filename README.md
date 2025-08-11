@@ -3,17 +3,6 @@
 
 _For detailed setup and process documentation, see the [Docs folder](https://github.com/AndrejGitH/Homelab-WinServer/tree/master/Docs)._
 
-## Summary Table: Main Lab Functions
-
-| Area             | What Was Configured                        | Screenshot Example |
-|------------------|--------------------------------------------|--------------------|
-| Virtualization   | Hyper-V environment, 3 key VMs             | See below          |
-| GPO Management   | Group Policies for lockdown and automation  | See below          |
-| Remote Support   | Admin RDP usage to client PC                | See below          |
-| Proxy Monitoring | CCProxy deployment for web monitoring       | See below          |
-| System Monitoring| Event Viewer, proactive alerting            | See below          |
-| File Sharing     | File server role, mapped drive for users    | See below          |
-
 ## Visual Walkthrough
 
 ### 1. Virtualization Lab Setup
@@ -76,4 +65,11 @@ I’ve practiced PowerShell scripting for common IT tasks like:
 
 See:
 https://github.com/AndrejGitH/Homelab-WinServer/tree/master/Scripts
+
+### 8. Backup (Veeam and Windows Local Backup)
+![Veeam_Github](https://github.com/user-attachments/assets/0a09033a-a184-42ea-9daf-0acc1d9702c5)
+
+![WinBackup_Github](https://github.com/user-attachments/assets/0bc403ba-3e69-4657-82d2-f5d62d4864d8)
+
+
 
