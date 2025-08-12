@@ -71,5 +71,9 @@ https://github.com/AndrejGitH/Homelab-WinServer/tree/master/Scripts
 
 ![WinBackup_Github](https://github.com/user-attachments/assets/0bc403ba-3e69-4657-82d2-f5d62d4864d8)
 
+### 9. WSUS
+![Wsus_github](https://github.com/user-attachments/assets/4e4da202-516e-4801-b1cf-8b8f182d7ad2)
+
+
 
 
