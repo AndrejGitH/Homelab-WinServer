@@ -78,7 +78,13 @@
   - Automating policy management
 - See scripts folder for details.
 
+## 11. WSUS
 
+- Installed the WSUS role  
+- Created a new Group Policy Object named "WSUS Policy"  
+- Configured the intranet update service location, automatic updates, and detection policies  
+- Linked the WSUS Policy to the domain  
+- Ran the gpupdate script from the domain controller to ensure proper policy updates across the domain
 
 
 
